@@ -1,0 +1,135 @@
+\documentclass[12pt,%
+addpoints,%
+%answers,%
+fleqn
+]{exam}
+\usepackage{pgf}
+\usepackage[T1]{fontenc}
+\usepackage{tikz,tkz-tab}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\usepackage[utf8]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[left=1.5cm, right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{numprint}
+\usepackage{enumerate}
+\usepackage{multicol}
+\pagestyle{headandfoot}
+\firstpageheader{}
+  {}
+  {Classe : 104 \\ Donné le 4 Janvier 2015 \textbf{pour le 15 Janvier 2016}}
+\runningfootrule
+\firstpagefootrule
+\firstpagefooter{\bsc{Lê} Philippe}{Devoir maison \no 1}{Page \thepage\ sur \numpages}
+
+\runningfooter{\bsc{Lê} Philippe}{Devoir maison \no 1}{Page \thepage\ sur \numpages}
+
+\newcommand{\llbrace}{\left\lbrace}
+\newcommand{\rrbrace}{\right\rbrace}
+
+
+
+\begin{document}
+\pgfplotsset{compat=1.18}
+
+
+\begin{center}
+    {\huge\bfseries Devoir maison \no 1}
+    \par\bigskip
+\end{center}
+\qformat{\textbf{Exercice \thequestion}\quad \thepoints \hfill}
+
+%\boxed{\textbf{Tous les résultats seront encadrés.}} 
+\begin{questions}
+
+    \question[5] Soit $a,b$ et $c$ les côtés d'un triangle quelconque. Déterminez l'aire du triangle en fonction de $a,b$ et $c$ en détaillant la démarche.
+
+    \begin{solution}
+
+
+    \end{solution}
+
+
+    \question[5] La courbe ci-dessous est la représentation graphique de la fonction $f$ définie sur $[-1;3]$ par
+    \[
+        f(x) = -x^3 + 3x^2.
+    \]
+    \begin{parts}
+        \part Sans aucune justification, dresser le tableau de variation de $f$.
+        \part Déduisez-en le tableau de variation de chacune des fonctions $g$, $h$ et $k$ définies par : \begin{align*}
+            g(x) & =f(x)-3,                              \\
+            h(x) & =-2f(x),                              \\
+            k(x) & =\dfrac{1}{f(x)},                     \\
+            l(x) & =\dfrac{1}{\sqrt{-\dfrac{f(x)}{2}+2}}
+        \end{align*}
+        Justifiez le sens de variation des fonctions $g,h,k,$ et $l$. Attention aux valeurs interdites !
+
+        \begin{tikzpicture}
+            \begin{axis}[
+                    grid=both,
+                    axis lines = center,
+                    xlabel = $x$,
+                    ylabel = {$f(x)$},
+                    xtick={-1,0,1,2,3}
+                ]
+                %Below the red parabola is defined
+                \addplot [
+                    domain=-1:3,
+                    samples=200,
+                    color=black,
+                ]
+                {-x^3+3*x^2};
+
+            \end{axis}
+        \end{tikzpicture}
+
+    \end{parts}
+
+    \question[10] Le but de cet exercice sera de déterminer l'ensemble de définition ainsi que le signe de la fonction $f$ définie par :
+    \[
+        f:x\mapsto \dfrac{1}{\sqrt{-x^2+x+6}-\sqrt{2x^2-3x+1}}.
+    \]
+    On pose les fonctions suivantes :
+    \begin{align*}
+        P_1(x) & = -x^2 + x + 6,  \\
+        P_2(x) & = 2x^2 - 3x + 1, \\
+        h(x)   & = \sqrt{P_1(x)}, \\
+        k(x)   & = \sqrt{P_2(x)}, \\
+        g(x)   & = h(x)-k(x).
+    \end{align*}
+
+    \begin{parts}
+        \part On souhaite tout d'abord déterminer l'ensemble de définition de $g$ (qui n'est autre que le dénominateur de $f$). Pour cela, voici des questions préliminaires :
+        \begin{subparts}
+            \subpart Dresser le tableau de signes de $P_1$ et en déduire l'ensemble de définition de $h$, noté $D_h$.
+            \subpart Dresser le tableau de signes de $P_2$ et en déduire l'ensemble de définition de $k$, noté $D_k$.
+            \subpart En déduire l'ensemble de définition de $g$, noté $D_g$. Pourquoi $D_g = D_h \cap D_k$ ?
+        \end{subparts}
+        \part \`A présent, on souhaite voir pour quelles valeurs de $g(x)$, la fonction $f(x)$ est bien définie.
+        \begin{subparts}
+            \subpart Dresser le tableau de signes de $g$ sur $D_g$.
+            \subpart En déduire les valeurs interdites que $f$ ne peut prendre.
+            \subpart En déduire l'ensemble de définition de $f$, noté $D_f$.
+        \end{subparts}
+
+        \part Dresser le tableau de signes de $f$ sur $D_f$.
+
+    \end{parts}
+
+
+    \question[2] (Bonus)
+    Donnez le complémentaire de la phrase $P$ : \og La nuit, tous les chats sont gris \fg.\\
+    On cherche donc une phrase $Q$ telle que si $Q$ est vraie, alors la phrase $P$ sera fausse.
+
+
+
+
+\end{questions}
+
+\end{document}
+
+
