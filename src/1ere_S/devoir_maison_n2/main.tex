@@ -1,0 +1,286 @@
+\documentclass[10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}%ATTENTION codage en utf8 !   
+%\usepackage{fourier}
+%\usepackage[scaled=0.875]{helvet} 
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{amsmath,amssymb,makeidx}
+\usepackage[normalem]{ulem}
+\usepackage{fancybox}
+\usepackage{tabularx}
+\usepackage{ulem}
+\usepackage{dcolumn}
+\usepackage{textcomp}
+\usepackage{eurosym}
+\usepackage{amsfonts,amssymb,amsmath,amsthm} 
+
+\usepackage{pstricks,pst-plot,pstricks-add}
+\setlength\paperheight{297mm}
+\setlength\paperwidth{210mm}
+%\setlength{\textheight}{24,5cm}
+% Tapuscrit Denis Vergès
+\usepackage[left=2cm,right=2cm,top=2.cm,bottom=2.cm]{geometry}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\vect}[1]{\mathchoice%
+{\overrightarrow{\displaystyle\mathstrut#1\,\,}}%
+{\overrightarrow{\textstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptstyle\mathstrut#1\,\,}}%
+{\overrightarrow{\scriptscriptstyle\mathstrut#1\,\,}}}
+\renewcommand{\theenumi}{\textbf{\arabic{enumi}}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\textbf{\alph{enumii}}}
+\renewcommand{\labelenumii}{\textbf{\theenumii.}}
+\def\Oij{$\left(\text{O},~\vect{\imath},~\vect{\jmath}\right)$}
+\def\Oijk{$\left(\text{O},~\vect{\imath},~\vect{\jmath},~\vect{k}\right)$}
+\def\Ouv{$\left(\text{O},~\vect{u},~\vect{v}\right)$}
+%\setlength{\voffset}{-1,5cm}
+\usepackage{fancyhdr} 
+\usepackage[frenchb]{babel}
+\usepackage[np]{numprint}
+\usepackage{fancybox}
+
+
+\newtheoremstyle{exostyle} 
+{\topsep}% espace avant 
+{\topsep}% espace apres 
+{}% Police utilisee par le style de thm 
+{}% Indentation (vide = aucune, \parindent = indentation paragraphe) 
+{\bfseries}% Police du titre de thm 
+{.}% Signe de ponctuation apres le titre du thm 
+{ }% Espace apres le titre du thm (\newline = linebreak) 
+{\thmname{#1}\thmnumber{ #2}\thmnote{. \normalfont{\textit{#3}}}}% composants du titre du thm : \thmname = nom du thm, \thmnumber = numéro du thm, \thmnote = sous-titre du thm 
+
+\theoremstyle{exostyle} 
+\newtheorem{exercice}{Exercice} 
+
+\newenvironment{questions}{\hspace{1cm}
+\begin{enumerate}[\hspace{12pt}\bfseries\itshape 1.]}{\end{enumerate}} %mettre un 1 à la place du a si on veut des numéros au lieu de lettres pour les questions 
+
+
+\begin{document}
+\setlength\parindent{0mm}
+\vspace{0,25cm}
+
+
+
+\begin{center}
+    {\huge\bfseries Devoir maison de mathématiques \no 2 - 112}
+    \par\bigskip
+\end{center}
+
+\boxed{\textbf{Tous les résultats seront encadrés.}}
+\begin{center}  Ce devoir maison comptera coefficient 1,5 dans la moyenne et devra être rendu en temps et en heure le Lundi 02 Mai 2016 à 11h30 (ou par e-mail scanné et zippé avant 11h30), \textbf{sous peine d'être sanctionné irrévocablement d'un 0 immédiatement}. Je vous conseille \textbf{fortement} de réaliser ce devoir maison vous-même car le prochain devoir surveillé contiendra un des exercices présents sur ce devoir maison. Vous pourrez vous mettre par groupes de 3 maximum (voire 4 pour un seul groupe éventuellement) afin de réaliser ce devoir. Vous me communiquerez vos groupes par e-mail à \texttt{le.philippe.duc.tai@gmail.com} avant Dimanche 17 Avril à 23h59, avec comme objet \og Groupe DM 112\fg. Passé ce délai vous serez considéré comme seul(e). Bon courage !
+\end{center}
+\hrule
+\vspace{0.25cm}
+Pour les exercices 1 et 2, on admettra
+\begin{itemize}
+    \item $\forall a\in ]-1;1[$ et tout $\lambda\in\R$, $\lim\limits_{n\to+\infty} \lambda a^n = 0$,
+    \item $\lim\limits_{n\to+\infty} n = +\infty.$
+    \item $\forall (u_n),(v_n)$ des suites convergentes respectivement vers $u$ et $v$ avec $\alpha$ et $\beta$ des réels : \[\lim\limits_{n\to\infty} (\alpha u_n + \beta v_n) = \alpha u + \beta v.\]
+\end{itemize}
+\begin{exercice}
+    Soit la suite\index{suite} numérique $\left(u_{n}\right)$ définie sur $\N$ par :
+
+    \[u_{0} = 2 \quad \text{et } \forall n, \:u_{n+1} = \dfrac{2}{3}u_{n} + \dfrac{1}{3}n + 1.\]
+
+    \begin{enumerate}
+        \item
+              \begin{enumerate}
+                  \item Calculer $u_{1}, u_{2}, u_{3}$ et $u_{4}$. On pourra en donner des valeurs approchées à $10^{- 2}$ près.
+                  \item Formuler une conjecture sur le sens de variation de cette suite.
+              \end{enumerate}
+
+        \item
+              \begin{enumerate}
+                  \item Soit la suite $(v_n)$ définie pour tout $n$ par $v_{n} = n+3 - u_n$.
+                        \begin{enumerate}
+                            \item Calculer $v_0$.
+                            \item Montrer que  $\forall n$, $v_{n+1}\geqslant \dfrac{2}{3}v_n$.
+                            \item En déduire le signe de $v_n$ pour tout $n$.
+                        \end{enumerate}
+                  \item Démontrer que pour tout entier naturel $n$,
+
+                        \[u_{n+1} - u_{n} = \dfrac{1}{3} \left(n + 3 - u_{n}\right).\]
+
+                  \item En déduire une validation de la conjecture précédente.
+              \end{enumerate}
+        \item On désigne par $\left(w_{n}\right)$ la suite\index{suite} définie sur $\N$ par $w_{n} = u_{n} - n$.
+              \begin{enumerate}
+                  \item Démontrer que la suite $\left(w_{n}\right)$ est une suite géométrique de raison $\dfrac{2}{3}$.
+                  \item En déduire que pour tout entier naturel $n$,
+
+                        \[u_{n} = 2\left(\dfrac{2}{3} \right)^n + n\]
+
+                  \item Déterminer la limite de la suite $\left(u_{n}\right)$.
+              \end{enumerate}
+        \item Pour tout entier naturel non nul $n$, on pose:
+
+              \[S_{n} = \sum_{k=0}^n u_{k} \quad \text{et}
+                  \quad T_{n} = \dfrac{S_{n}}{n^2}.\]
+
+              \begin{enumerate}
+                  \item Exprimer $S_{n}$ en fonction de $n$.
+                  \item Déterminer la limite de la suite $\left(T_{n}\right)$.
+              \end{enumerate}
+    \end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+    Soit $(u_n)$ la suite définie par son premier terme $u_0$ et, pour tout entier naturel $n$, par la relation :
+    \[
+        u_{n+1} = au_n + b,
+    \]
+    pour $a$ et $b$ des réels non nuls tels que $a\neq 1$.\\
+    On pose pour tout entier naturel $n$,
+    \[ v_n = u_n - \dfrac{b}{1-a}.\]
+    \begin{enumerate}
+        \item Démontrer que la suite $(v_n)$ est géométrique de raison $a$.
+        \item En déduire une expression explicite de la suite $(u_n)$.
+        \item Déterminer $\lim\limits_{n\to\infty} u_n$.
+    \end{enumerate}
+\end{exercice}
+
+
+\begin{exercice}
+    Les questions sont indépendantes. Cet exercice consiste à comprendre plusieurs algorithmes et de préciser ce que fait \textbf{exactement} l'algorithme. Les algorithmes ne mettent pas forcément en \oe{}uvre des suites. Tentez, experimentez, comprenez : à vous de jouer !
+    \begin{enumerate}
+        \item \begin{center}
+                  \begin{tabularx}{0.7\linewidth}{|l|X|}\hline
+                      \textbf{Variables :}      & $K$ et $J$ sont des entiers naturels            \\
+                                                & $P$ est un nombre réel                          \\
+                      \textbf{Initialisation :} & $P$ prend la valeur $0$                         \\
+                                                & $J$ prend la valeur $1$                         \\
+                      \textbf{Entrée :}         & Saisir la valeur de $K$                         \\
+                      \textbf{Traitement :}     & Tant que $P< 0,05 - 10^{- K}$                   \\
+                                                & \quad $P$ prend la valeur $0,2 \times P + 0,04$ \\
+                                                & \quad  $J$ prend la valeur $J+ 1$               \\
+                                                & Fin tant que                                    \\
+                      \textbf{Sortie :}         & Afficher $J$                                    \\ \hline
+                  \end{tabularx}
+              \end{center}
+              \vspace{0.25cm}
+        \item \begin{center}
+                  \begin{tabularx}{0.7\linewidth}{|l|X|}\hline
+                      \textbf{Variables :}             & Soit un entier naturel non nul $n$                     \\
+                      \textbf{Initialisation :}        & Affecter à $u$ la valeur 2                             \\
+                      \textbf{Entrée :}                & Saisir la valeur de $K$                                \\
+                      \textbf{Traitement et sortie : } & Pour $i$ allant de 1 à $n$                             \\
+                                                       & \quad Affecter à $u$ la valeur $\dfrac{1+0,5u}{0,5+u}$ \\
+                                                       & \quad Afficher $u$                                     \\
+                                                       & Fin Pour                                               \\\hline
+                  \end{tabularx}
+              \end{center}
+              \vspace{0.25cm}
+        \item Soit $f$ une fonction positive définie sur $[0;1]$. \begin{center}
+                  \begin{tabularx}{0.7\linewidth}{|l|X|}\hline
+                      \textbf{Variables :}      & $k$ et $n$ sont des nombres entiers naturels                              \\
+                                                & $s$ est un nombre réel                                                    \\
+                      \textbf{Entrée :}         & Demander à l'utilisateur la valeur de $n$.                                \\\
+                      \textbf{Initialisation :} & Affecter à $s$ la valeur 0.                                               \\
+                      \textbf{Traitement :}     & Pour $k$ allant de 0 à $n-1$                                              \\
+                                                & \quad Affecter à $s$ la valeur $s+\dfrac{1}{n}f\left(\dfrac{k}{n}\right)$ \\
+                                                & Fin Pour                                                                  \\
+                      \textbf{Sortie :}         & Afficher $s$                                                              \\\hline
+                  \end{tabularx}
+              \end{center}
+              \vspace{0.25cm}
+        \item \begin{center}
+                  \begin{tabularx}{0.7\linewidth}{|l|X|}\hline
+                      \textbf{Variables :}  & $m$ et $m'$ entiers relatifs                                                  \\
+                      \textbf{Traitement :} & Pour $m$ allant de $- 10$ à 10 :                                              \\
+                                            & \hspace{0,5cm}Pour $m'$ allant de $-10$ à 10 :                                \\
+                                            & \hspace{1cm}Si $\left(mm'\right)^2 + 16(m - 1)\left(m' - 1\right) + 4mm' = 0$ \\
+                                            & \hspace{1,5cm}Alors Afficher $\left(m~;~m'\right)$                            \\
+                                            & \hspace{0,5cm}Fin du Pour                                                     \\
+                                            & Fin du Pour                                                                   \\ \hline
+                  \end{tabularx}
+              \end{center}
+
+    \end{enumerate}
+
+\end{exercice}
+
+\begin{exercice}
+    Soit la suite $(u_n)_{n\in\mathbb{N}}$ définie pour tout $n$ entier naturel par :
+    \[
+        u_n = \dfrac{50\sqrt{n}}{2n^2-25n+100}.
+    \]
+    \'Etudier le sens de variation de $(u_n)_{n\in\mathbb{N}}$.
+\end{exercice}
+
+\begin{exercice}
+    \begin{enumerate}
+        \item Vérifier que $\forall x\in\mathbb{R}$ : $x^3-1 = (x^2+x+1)(x-1)$.
+        \item En déduire le signe de $x^3-1$ sur $\mathbb{R}$.
+        \item Démontrer que  $\forall x\in ]0;+\infty[$ : $2\sqrt{x} + \dfrac{1}{x} \geqslant 3.$
+    \end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+    Soit $f$ la fonction définie par :
+    \[
+        f(x)=\dfrac{4x^2-8x}{x^2-2x-3}.
+    \]
+    On note $\mathcal{C}_f$ sa courbe représentative.
+    \begin{enumerate}
+        \item Déterminer l'ensemble de définition de $f$.
+        \item Déterminer l'expression de la fonction dérivée de $f$.
+              \[
+                  \text{On trouvera :    } f'(x)=\dfrac{-24x+24}{(x^2-2x+3)^2}.
+              \]
+        \item \'Etudier le signe de $f'(x)$ et en déduire les variations de $f$.
+        \item En quel point $\mathcal{C}_f$ admet-elle une tangente horizontale ? Quelle est alors son équation ?
+        \item Donner une équation de la droite $(\mathcal{D})$ tangente à $\mathcal{C}_f$ au point d'abscisse 5.
+    \end{enumerate}
+\end{exercice}
+
+
+\begin{exercice}
+    On jette trois fois de suite un dé cubique parfaitement équilibré. Chaque fois qu'on obtient un multiple de 3, on gagne 5 euros, sinon on perd 2 euros. On désigne par $X$ la variable aléatoire correspondant au gain obtenu au bout de $3$ lancers.
+    \begin{enumerate}
+        \item Réaliser un arbre pondéré représentant cette expérience. On notera $M$ l'événement : \og On obtient un multiple de 3\fg{}, et $\bar{M}$ son événement contraire. Indiquer au bout de chaque chemin le gain obtenu.
+        \item Montrer que la probabilité de gagner exactement 1\euro{} est :
+              \[ \mathbb{P}(X=1)=\dfrac{12}{27}.
+              \]
+        \item Réaliser un tableau donnant la loi de probabilité de la variable aléatoire $X$ (\emph{on ne demande pas de détailler tous les calculs).}
+        \item Calculer l'espérance mathématique de $X$. Ce jeu est-il équitable ?
+        \item L'organisateur de ce jeu décide de demander une mise de $2$\euro{} à chaque joueur. Quelle est alors l'espérance de gain d'un joueur?
+    \end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+    (Introduction au Modèle de Cox-Ross-Rubinstein)
+    \par L'approche la plus pédagogique, et donc la plus populaire pour évaluer les options sur actions\footnote{Une action est un titre de propriété sur une entreprise qui permet au détenteur d'exercer un droit sur l'entreprise et de toucher des dividendes. Le prix d'une action est déterminée généralement par la confrontation de l'offre et la demande que des investisseurs sont prêts à payer pour l'acquérir. Les ordres d'achats et ventes incessants sur le marché amènent à une variation du prix très erratique.} s'appuie sur la représentation de l'évolution du cours de l'action par un arbre binomial.
+    \par On s'intéressera à un modèle à une période. Dans ce modèle, on est libre d'acheter, vendre, placer, emprunter. Les biens sont infiniment liquides.\footnote{On peut par exemple acheter 0,0001 actions.}
+    \par Soit $r$ le taux sans risque tel qu'une quantité $V_0$ placée à l'instant $t=0$, rapportera $(1+r)V_0$ à l'instant $t=1$. De même, une quantité $V_0$ peut être empruntée à $t=0$ et doit être rendue à hauteur de $(1+r)V_0$.
+    \par Soit $u$ et $d$ des réels non nuls tels que $u>d$. Soit $S_0$ le prix de l'action à l'instant initial $t=0$. On note $S_1$ la variable aléatoire représentant le prix de l'action à la date $t=1$. On suppose qu'avec une probabilité $p$, $S_1$ vaudra $u\times S_0$ et avec une probabilité $1-p$, $S_1$ vaudra $d\times S_0$.
+    \begin{enumerate}
+        \item Représenter le cours de l'action aux temps $t=0$ à $t=1$ par un arbre pondéré.
+        \item Calculer l'espérance de $S_1$.
+        \item Calculer $p$ tel que l'espérance de $S_1$ soit égale à $(1+r)S_0$. C'est-à-dire de calculer $p$ tel que le rendement de l'action soit égal au taux sans risque.\footnote{La probabilité obtenue est appelée probabilité risque-neutre.}
+              \[
+                  \text{On trouvera :   }  p= \dfrac{1+r-d}{u-d}.
+              \]
+        \item Que doit-on en déduire sur $u$,$d$ et $r$ pour que $p$ définisse une probabilité ? Donner un encadrement de $(1+r)$.
+        \item Montrer que si l'action n'avait pas un rendement espéré égal au taux sans risque, et donc que $u<(1+r)$ ou $d>(1+r)$, il existerait un moyen de réaliser un \textbf{profit infini} de l'instant $t=0$ à $t=1$.
+    \end{enumerate}
+    % \item \par Une option call européenne sur action est un droit mais pas une obligation d'acheter, à celui qu'on a acheté l'option, à un prix donné $K$ à une date donnée $t=1$. \\
+    % \par Ainsi, afin d'illustrer ceci, un exemple.
+    % \begin{itemize} 
+    % \item Supposons que l'on détient à l'instant $t=0$ une option sur l'action $S$, (l'action valant à présent 120\euro{} à $t=0$) qui nous donne le droit mais pas l'obligation d'acheter l'action $S$ au prix de $K=$100\euro{} à l'instant $t=1$. 
+    % \item Ensuite, à l'instant $t=1$, l'action coûte 150\euro. En exerçant mon option je bénéficie du droit d'acheter à 100\euro{} l'action à un particulier sachant qu'elle est côtée à 150\euro{} sur le marché. 
+    % \end{itemize}
+    % \par Je réalise donc une plus-value de 50\euro{}. Si en $t=1$, l'action aurait coûté 90\euro{}, je n'ai pas intérêt à exercer mon option car j'achèterai plus cher l'action que son prix de marché. Par conséquent je ne réalise pas de plus-value. 
+
+    % \par Ainsi, on modélise ceci par une variable aléatoire à maturité $C_1=\max\left(S_1-K ; 0\right)$ donnant le payoff de l'option.
+
+\end{exercice}
+\end{document}
+
+
